@@ -38,14 +38,14 @@ export const clientes: Cliente[] = nombres.map((nombre, i) => {
   return {
     id: `CL-${String(1024 + i)}`,
     nombre,
-    segmento: segmentos[Math.floor(r(1) * segmentos.length)],
-    producto: productos[Math.floor(r(2) * productos.length)],
-    ciudad: ciudades[Math.floor(r(3) * ciudades.length)],
-    consumo: consumos[Math.floor(r(4) * consumos.length)],
+    segmento: segmentos[Math.floor(r(1) * segmentos.length)]!,
+    producto: productos[Math.floor(r(2) * productos.length)]!,
+    ciudad: ciudades[Math.floor(r(3) * ciudades.length)]!,
+    consumo: consumos[Math.floor(r(4) * consumos.length)]!,
     ingresos: Math.round((12000 + r(5) * 188000) / 100) * 100,
     contratos: 1 + Math.floor(r(6) * 9),
     satisfaccion: Math.round((60 + r(7) * 40) * 10) / 10,
-    estado: estados[Math.floor(r(8) * estados.length)],
+    estado: estados[Math.floor(r(8) * estados.length)]!,
     ultimaCompra: new Date(2026, Math.floor(r(9) * 9), 1 + Math.floor(r(10) * 27))
       .toISOString()
       .slice(0, 10),
