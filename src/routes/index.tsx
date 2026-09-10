@@ -25,14 +25,14 @@ export const Route = createFileRoute("/")({
 
 function Login() {
   const navigate = useNavigate();
-  const [usuario, setUsuario] = useState("demo@empresa.com");
-  const [clave, setClave] = useState("demo1234");
+  const [usuario, setUsuario] = useState("");
+  const [clave, setClave] = useState("");
   const [error, setError] = useState("");
 
   const enviar = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!usuario.trim() || clave.length < 4) {
-      setError("Ingresa un usuario y una clave de al menos 4 caracteres.");
+    if (!validarCredenciales(usuario, clave)) {
+      setError("Usuario o clave incorrectos. Revisa los datos e inténtalo de nuevo.");
       return;
     }
     iniciarSesion(usuario.trim());
