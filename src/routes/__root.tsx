@@ -77,14 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { title: "Clientes 360 | Panel analítico de cartera" },
+      {
+        name: "description",
+        content:
+          "Panel de clientes con filtros por segmento, producto, ciudad y consumo, KPIs y dashboard de Power BI.",
+      },
+      { name: "author", content: "Clientes 360" },
+      { property: "og:title", content: "Clientes 360 | Panel analítico de cartera" },
+      {
+        property: "og:description",
+        content: "Vista general de clientes, filtros dinámicos, KPIs y Power BI embebido.",
+      },
+      { name: "twitter:site", content: "@clientes360" },
     ],
     links: [
       {

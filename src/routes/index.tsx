@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { iniciarSesion } from "@/lib/auth";
+import { iniciarSesion, validarCredenciales } from "@/lib/auth";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,14 +25,14 @@ export const Route = createFileRoute("/")({
 
 function Login() {
   const navigate = useNavigate();
-  const [usuario, setUsuario] = useState("demo@empresa.com");
-  const [clave, setClave] = useState("demo1234");
+  const [usuario, setUsuario] = useState("");
+  const [clave, setClave] = useState("");
   const [error, setError] = useState("");
 
   const enviar = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!usuario.trim() || clave.length < 4) {
-      setError("Ingresa un usuario y una clave de al menos 4 caracteres.");
+    if (!validarCredenciales(usuario, clave)) {
+      setError("Usuario o clave incorrectos. Revisa los datos e inténtalo de nuevo.");
       return;
     }
     iniciarSesion(usuario.trim());
@@ -71,11 +71,11 @@ function Login() {
         <form onSubmit={enviar} className="w-full max-w-sm space-y-6">
           <div className="space-y-2">
             <span className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-semibold tracking-wide text-secondary-foreground uppercase">
-              Acceso demo
+              Acceso privado
             </span>
             <h2 className="text-3xl font-semibold">Iniciar sesión</h2>
             <p className="text-sm text-muted-foreground">
-              Login de demostración: cualquier correo y clave funcionan.
+              Ingresa con tu correo y clave registrados.
             </p>
           </div>
 
