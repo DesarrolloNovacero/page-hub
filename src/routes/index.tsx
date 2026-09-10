@@ -71,7 +71,7 @@ function Login() {
         <form onSubmit={enviar} className="w-full max-w-sm space-y-6">
           <div className="space-y-2">
             <span className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-semibold tracking-wide text-secondary-foreground uppercase">
-              Acceso demo
+              Acceso privado
             </span>
             <h2 className="text-3xl font-semibold">Iniciar sesión</h2>
             <p className="text-sm text-muted-foreground">
