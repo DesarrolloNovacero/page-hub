@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { iniciarSesion } from "@/lib/auth";
+import { iniciarSesion, validarCredenciales } from "@/lib/auth";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,7 +75,7 @@ function Login() {
             </span>
             <h2 className="text-3xl font-semibold">Iniciar sesión</h2>
             <p className="text-sm text-muted-foreground">
-              Login de demostración: cualquier correo y clave funcionan.
+              Ingresa con tu correo y clave registrados.
             </p>
           </div>
 
